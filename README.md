@@ -1,7 +1,18 @@
 # PowerScripts
 Useful PowerShell scripts
 
-##RNA (Restart Network Adapter)
+## git-ignore
+
+Git ignore is scripth that downloads .gitignore template from Github
+
+**Example**
+```
+git-ignore VisualStudio
+```
+will download contents of the file `https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore` 
+
+
+## RNA (Restart Network Adapter)
 
 **How to use**
 ```
