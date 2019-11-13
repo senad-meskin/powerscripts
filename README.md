@@ -9,7 +9,10 @@ Git ignore is scripth that downloads .gitignore template from Github
 ```
 git-ignore VisualStudio
 ```
-will download contents of the file `https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore` 
+will download contents of the file `https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore` and save it to file `.gitignore`
+
+**Possible problems**
+Names of templates are case sensitive so you should know the name before downloading.
 
 
 ## RNA (Restart Network Adapter)
