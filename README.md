@@ -1,6 +1,18 @@
 # PowerScripts
 Useful PowerShell scripts
 
+## Guid generator
+
+Guid generator will generate GUID and put it into the Clipboard
+
+Just type `guid` into your powershell console
+```powershell
+E:\ps> guid
+Guid: d5bae5bc-d0dc-47ef-bbf7-1323f7a2180e copied to the clipboard!
+E:\ps>
+```
+
+
 ## git-ignore
 
 Git ignore is scripth that downloads .gitignore template from Github
