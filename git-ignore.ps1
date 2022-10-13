@@ -19,17 +19,22 @@
 #>
 param([ValidateNotNullOrEmpty()][string]$templateName = $(throw "Template name is mandatory!"))
 ## Create url from where file will be downloaded
-$url = "https://raw.githubusercontent.com/github/gitignore/master/$($templateName).gitignore"
+$workingDir = (Get-Item .).FullName
+$url = "https://raw.githubusercontent.com/github/gitignore/main/$($templateName).gitignore"
 ## display info in terminal
 Write-Host "Downloading .gitignore template from $($url)"
 
 try {
     ## invoke webrequest, expand content and then write that content to .gitignore file
-    Invoke-WebRequest $url -ErrorAction SilentlyContinue | Select-Object -Expand Content | Set-Content .\.gitignore -Force
+    ## Invoke-WebRequest $url -ErrorAction SilentlyContinue | Select-Object -Expand Content | Set-Content .\.gitignore -Force
+    $wc = New-Object System.Net.WebClient
+    
+    $wc.DownloadFile($url, "$($workingDir)\.gitignore");
 }
 catch {
     ## display error if any
     Write-Host "There was an error while downloading $($templateName) .gitignore template from a GitHub repository, please check the template name. (It's case sensitive)" -ForegroundColor Red
+    Write-Host $_;
 }
 ## notice user that script reached it's end
 Write-Host "Done"
